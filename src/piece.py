@@ -19,7 +19,6 @@ class Piece:
         )
     def add_moves(self, move):
         self.moves.append(move)
-    def set_texture(self):
         
 
 class Pawn(Piece):
