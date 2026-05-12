@@ -26,7 +26,7 @@ class Board:
             self.squares[row_pawn][col] = Square(row_pawn, col, Pawn(color))
 
         self.squares[row_other][1] = Square(row_other, 1, Knight(color))
-        self.squares[row_other][1] = Square(row_other, 6, Knight(color))
+        self.squares[row_other][6] = Square(row_other, 6, Knight(color))
 
         self.squares[row_other][2] = Square(row_other, 2, Bishop(color))
         self.squares[row_other][5] = Square(row_other, 5, Bishop(color))
