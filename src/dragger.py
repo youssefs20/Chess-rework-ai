@@ -35,7 +35,7 @@ class Dragger:
 
     def update_bilt(self,surface):
 
-        self.piece.set_texture(size=120)
+        self.piece.set_texture(size=128)
         texture = self.piece.texture
 
         img = pygame.image.load(texture)
