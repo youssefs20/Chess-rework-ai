@@ -52,6 +52,8 @@ class Main:
 
                     if dragger.dragging:
                         dragger.update_mouse(event.pos)
+                        game.show_bg(screen)
+                        game.show_pieces(screen)
                         dragger.update_bilt(screen)
                         # print('Dragging piece to', event.pos)
 
