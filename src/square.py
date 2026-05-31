@@ -10,7 +10,7 @@ class Square:
     
 
     def isEmptyOrRival(self, color):
-        return not self.has_piece() or self.piece.color != color
+        return self.has_piece() or self.hasRivalPiece(color)
     
     def hasRivalPiece(self,color):
         return self.has_piece() and self.piece.color != color 

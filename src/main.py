@@ -21,7 +21,8 @@ class Main:
         # Main loop
         while True:
             game.show_bg(screen)
-            game.show_pieces(screen)
+            game.show_moves(screen)
+            game.show_pieces(screen) # litching
 
             if dragger.dragging:
                 dragger.update_bilt(screen)
@@ -40,19 +41,27 @@ class Main:
 
                     if board.squares[clicked_row][clicked_col].has_piece():
                         piece = board.squares[clicked_row][clicked_col].piece
+                        board.calc_moves(piece, clicked_row, clicked_col)
                         dragger.save_initial(event.pos)
                         dragger.drag_piece(piece)
+                        #show moves
+                        game.show_bg(screen)
+                        game.show_moves(screen)
+                        game.show_pieces(screen)
+
     
+                #click release
                 elif event.type == pygame.MOUSEBUTTONUP:
                     
 
                         dragger.undrag_piece()
-
+                # mouse motion
                 elif event.type == pygame.MOUSEMOTION:
 
                     if dragger.dragging:
                         dragger.update_mouse(event.pos)
                         game.show_bg(screen)
+                        game.show_moves(screen)
                         game.show_pieces(screen)
                         dragger.update_bilt(screen)
                         # print('Dragging piece to', event.pos)
